@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { GiSharkBite } from "react-icons/gi";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 
 const logoVariants = {
   initial: {
@@ -37,6 +37,22 @@ const sharkVariants = {
 };
 
 const navbarVariants = {
+  initial: {
+    y: "25%",
+    opacity: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.1,
+    },
+  },
+  animate: {
+    y: "0%",
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.1,
+    },
+  },
   whileHover: {
     color: "rgb(34 211 238)",
     textShadow: "0 0 20px rgb(6 182 212)",
@@ -45,21 +61,21 @@ const navbarVariants = {
 
 const boxVariants = {
   initial: {
-    opacity: 0,
-    scale: 0,
-  },
-  animate: {
-    opacity: 1,
-    scale: 1,
+    x: "100%",
     transition: {
-      // duration: 0.5,
+      type: "spring",
+      bounce: 0.1,
+      when: "afterChildren",
+      staggerChildren: 0.25,
     },
   },
-  exit: {
-    opacity: 0,
-    scale: 0,
+  animate: {
+    x: "0%",
     transition: {
-      duration: 0.5,
+      type: "spring",
+      bounce: 0.1,
+      when: "beforeChildren",
+      staggerChildren: 0.25,
     },
   },
 };
@@ -85,188 +101,49 @@ const Navbar = () => {
           </motion.div>
         </motion.div>
 
-        <div onClick={handleToggle} className="hidden max-sm:block">
-          <FaBarsStaggered />
+        <div
+          onClick={handleToggle}
+          className="duration-300 hover:text-cyan-500 hidden max-sm:block relative z-10"
+        >
+          {toggle ? <FaTimes /> : <FaBarsStaggered />}
         </div>
 
-        <div className="gap-8 flex max-sm:w-0 max-sm:hidden">
-          <motion.a variants={navbarVariants} whileHover="whileHover" href="">
+        <motion.div className="space-x-6 max-sm:hidden">
+          <a className="duration-300 hover:text-cyan-500" href="">
             Home
-          </motion.a>
-          <motion.a variants={navbarVariants} whileHover="whileHover" href="">
-            Portofolio
-          </motion.a>
-          <motion.a variants={navbarVariants} whileHover="whileHover" href="">
+          </a>
+          <a className="duration-300 hover:text-cyan-500" href="">
+            Portfolio
+          </a>
+          <a className="duration-300 hover:text-cyan-500" href="">
             Contact
-          </motion.a>
-        </div>
-      </div>
+          </a>
+        </motion.div>
+
+        <AnimatePresence>
+          {toggle && (
+            <motion.div
+              variants={boxVariants}
+              initial="initial"
+              animate="animate"
+              exit="initial"
+              className={"fixed inset-y-0 right-0 flex flex-col justify-center space-y-6 bg-zinc-950 p-24"}
+            >
+              <a className="duration-300 hover:text-cyan-500" href="">
+                Home
+              </a>
+              <a className="duration-300 hover:text-cyan-500" href="">
+                Portfolio
+              </a>
+              <a className="duration-300 hover:text-cyan-500" href="">
+                Contact
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
     </header>
   );
 };
 
 export default Navbar;
-
-import { useState } from "react";
-import { motion, AnimatePresence, MotionConfig } from "framer-motion";
-
-export default function Navbar() {
-	const [mobileNav, setMobileNav] = useState(false);
-
-	const toggleMobileNav = () => {
-		setMobileNav(!mobileNav);
-	};
-
-	return (
-		<header className="sticky top-0 inset-x-0 p-6 bg-black/30">
-			<nav className="container mx-auto">
-				<motion.button
-					initial="hide"
-					animate={mobileNav ? "show" : "hide"}
-					onClick={toggleMobileNav}
-					className="flex flex-col space-y-1 relative z-10"
-				>
-					<motion.span
-						variants={{
-							hide: {
-								rotate: 0,
-							},
-							show: {
-								rotate: 45,
-								y: 5,
-							},
-						}}
-						className="w-6 bg-white h-px block"
-					></motion.span>
-					<motion.span
-						variants={{
-							hide: {
-								opacity: 1,
-							},
-							show: {
-								opacity: 0,
-							},
-						}}
-						className="w-6 bg-white h-px block"
-					></motion.span>
-					<motion.span
-						variants={{
-							hide: {
-								rotate: 0,
-							},
-							show: {
-								rotate: -45,
-								y: -5,
-							},
-						}}
-						className="w-6 bg-white h-px block"
-					></motion.span>
-				</motion.button>
-				<AnimatePresence>
-					{mobileNav && (
-						<MotionConfig
-							transition={{
-								type: "spring",
-								bounce: 0.1,
-							}}
-						>
-							<motion.div
-								key="mobile-nav"
-								variants={{
-									hide: {
-										x: "-100%",
-										transition: {
-											type: "spring",
-											bounce: 0.1,
-											when: "afterChildren",
-											staggerChildren: 0.25,
-										},
-									},
-									show: {
-										x: "0%",
-										transition: {
-											type: "spring",
-											bounce: 0.1,
-											when: "beforeChildren",
-											staggerChildren: 0.25,
-										},
-									},
-								}}
-								initial="hide"
-								animate="show"
-								exit="hide"
-								className="fixed inset-0 bg-blue-600 p-6 flex flex-col justify-center space-y-10 lg:hidden"
-							>
-								<motion.ul
-									variants={{
-										hide: {
-											y: "25%",
-											opacity: 0,
-										},
-										show: {
-											y: "0%",
-											opacity: 1,
-										},
-									}}
-									className="list-none space-y-6"
-								>
-									<li>
-										<a href="#" className="text-5xl font-semibold text-white">
-											Link #1
-										</a>
-									</li>
-									<li>
-										<a href="#" className="text-5xl font-semibold text-white">
-											Link #2
-										</a>
-									</li>
-									<li>
-										<a href="#" className="text-5xl font-semibold text-white">
-											Link #3
-										</a>
-									</li>
-								</motion.ul>
-								<motion.div
-									variants={{
-										hide: {
-											y: "25%",
-											opacity: 0,
-										},
-										show: {
-											y: "0%",
-											opacity: 1,
-										},
-									}}
-									className="w-full h-px bg-white/30"
-								></motion.div>
-								<motion.ul
-									variants={{
-										hide: {
-											y: "25%",
-											opacity: 0,
-										},
-										show: {
-											y: "0%",
-											opacity: 1,
-										},
-									}}
-									className="list-none flex justify-center gap-x-4"
-								>
-									<li>
-										<div className="bg-white rounded-lg w-8 h-8"></div>
-									</li>
-									<li>
-										<div className="bg-white rounded-lg w-8 h-8"></div>
-									</li>
-									<li>
-										<div className="bg-white rounded-lg w-8 h-8"></div>
-									</li>
-								</motion.ul>
-							</motion.div>
-						</MotionConfig>
-					)}
-				</AnimatePresence>
-			</nav>
-		</header>
-	);
-}
