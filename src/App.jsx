@@ -1,13 +1,13 @@
 import React from "react";
-import Navbar from "./pages/global/Navbar";
 import Home from "./pages/home";
+import Portfolio from "./pages/portfolio";
 
 const App = () => {
   return (
     <>
-      {/* <Navbar /> */}
       <main>
         <Home />
+        <Portfolio />
       </main>
     </>
   );

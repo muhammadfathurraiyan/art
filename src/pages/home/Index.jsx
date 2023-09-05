@@ -56,8 +56,8 @@ const Index = () => {
       <div className=" m-4 flex gap-4 max-md:flex-wrap">
         <div className="flex flex-col gap-y-4">
           <div className="flex gap-x-4">
-            <div className="p-5 grow bg-zinc-800 rounded-lg flex items-center justify-center">
-              <img src="https://picsum.photos/600/150" alt="" />
+            <div className="h-[25vh] w-full grow max-sm:h-full">
+              <img className="rounded-lg object-cover max-h-full min-w-full align-bottom max-sm:w-full max-sm:max-h-[40vh] max-sm:min-w-0" src="https://picsum.photos/600" alt="" />
             </div>
             <div ref={menuRef} className="flex grow flex-col gap-y-4 ">
               <div className="p-5 grow bg-zinc-800 rounded-lg flex items-center justify-center">
@@ -127,8 +127,8 @@ const Index = () => {
             </p>
           </div>
         </div>
-        <div className="p-4 bg-zinc-800 rounded-lg">
-          <img src="https://picsum.photos/600/750" alt="" />
+        <div className="flex grow ">
+          <img className="rounded-lg object-cover max-h-full min-w-full align-bottom" src="https://picsum.photos/800" alt="" />
         </div>
       </div>
     </section>
