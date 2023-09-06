@@ -29,7 +29,7 @@ const boxVariants = {
   },
 };
 
-const Index = () => {
+const index = () => {
   const [toggle, setToggle] = useState(false);
   const handleToggle = () => {
     setToggle(!toggle);
@@ -56,7 +56,11 @@ const Index = () => {
         <div className="flex flex-col gap-y-4">
           <div className="flex gap-x-4">
             <div className="h-[25vh] w-full grow max-sm:h-full">
-              <img className="rounded-lg object-cover max-h-full min-w-full align-bottom max-sm:w-full max-sm:max-h-[40vh] max-sm:min-w-0" src="https://picsum.photos/600" alt="" />
+              <img
+                className="rounded-lg object-cover max-h-full min-w-full align-bottom max-sm:w-full max-sm:max-h-[40vh] max-sm:min-w-0"
+                src="https://picsum.photos/600"
+                alt=""
+              />
             </div>
             <div ref={menuRef} className="flex grow flex-col gap-y-4 ">
               <div className="p-5 grow bg-zinc-800 rounded-lg flex items-center justify-center">
@@ -127,11 +131,15 @@ const Index = () => {
           </div>
         </div>
         <div className="flex grow ">
-          <img className="rounded-lg object-cover max-h-full min-w-full align-bottom" src="https://picsum.photos/800" alt="" />
+          <img
+            className="rounded-lg object-cover max-h-full min-w-full align-bottom"
+            src="https://picsum.photos/800"
+            alt=""
+          />
         </div>
       </div>
     </section>
   );
 };
 
-export default Index;
+export default index;

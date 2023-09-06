@@ -30,8 +30,15 @@ const index = () => {
         </div>
         <div className="flex-wrap flex gap-4 max-sm:flex-row">
           {data.map((d) => (
-            <div id={d.id} className="h-[40vh] grow max-sm:h-auto max-sm:w-full">
-              <img loading="lazy"  className="rounded-lg object-cover max-h-full min-w-full align-bottom max-sm:w-full max-sm:max-h-[75vh] max-sm:min-w-0 after:grow-[10] after:content-none" src={d.download_url} />
+            <div
+              id={d.id}
+              className="h-[40vh] grow max-sm:h-auto max-sm:w-full"
+            >
+              <img
+                loading="lazy"
+                className="rounded-lg object-cover max-h-full min-w-full align-bottom max-sm:w-full max-sm:max-h-[75vh] max-sm:min-w-0 after:grow-[10] after:content-none"
+                src={d.download_url}
+              />
             </div>
           ))}
         </div>
