@@ -7,4 +7,10 @@
   body {
     @apply font-['Poppins'] bg-zinc-900 text-zinc-300;
   }
+  ::-webkit-scrollbar {
+    @apply hidden;
+  }
+  html {
+    @apply scroll-smooth;
+  }
 }

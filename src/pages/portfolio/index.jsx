@@ -16,7 +16,7 @@ const index = () => {
   }, []);
 
   return (
-    <section>
+    <section id="portfolio">
       <div className="m-4 flex flex-col gap-4">
         <div className="flex flex-col items-center bg-zinc-800 rounded-lg grow justify-center p-5">
           <h1 className="text-xl font-bold">

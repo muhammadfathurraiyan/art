@@ -51,7 +51,7 @@ const index = () => {
   });
 
   return (
-    <section>
+    <section id="home">
       <div className=" m-4 flex gap-4 max-md:flex-wrap">
         <div className="flex flex-col gap-y-4">
           <div className="flex gap-x-4">
@@ -71,13 +71,19 @@ const index = () => {
                   <FaBarsStaggered />
                 </div>
                 <div className="flex w-full justify-evenly gap-2 max-lg:text-xs max-md:hidden">
-                  <a className="duration-300 hover:text-cyan-500" href="">
+                  <a className="duration-300 hover:text-cyan-500" href="#home">
                     Home
                   </a>
-                  <a className="duration-300 hover:text-cyan-500" href="">
+                  <a
+                    className="duration-300 hover:text-cyan-500"
+                    href="#portfolio"
+                  >
                     Portfolio
                   </a>
-                  <a className="duration-300 hover:text-cyan-500" href="">
+                  <a
+                    className="duration-300 hover:text-cyan-500"
+                    href="#contact"
+                  >
                     Contact
                   </a>
                 </div>
@@ -92,13 +98,25 @@ const index = () => {
                         "fixed inset-y-0 right-0 flex flex-col justify-center space-y-6 bg-zinc-950 p-24"
                       }
                     >
-                      <a className="duration-300 hover:text-cyan-500" href="">
+                      <a
+                        className="duration-300 hover:text-cyan-500"
+                        href="#home"
+                        onClick={() => setToggle(false)}
+                      >
                         Home
                       </a>
-                      <a className="duration-300 hover:text-cyan-500" href="">
+                      <a
+                        className="duration-300 hover:text-cyan-500"
+                        href="#portfolio"
+                        onClick={() => setToggle(false)}
+                      >
                         Portfolio
                       </a>
-                      <a className="duration-300 hover:text-cyan-500" href="">
+                      <a
+                        className="duration-300 hover:text-cyan-500"
+                        href="#contact"
+                        onClick={() => setToggle(false)}
+                      >
                         Contact
                       </a>
                     </motion.div>

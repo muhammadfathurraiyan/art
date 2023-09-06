@@ -9,7 +9,7 @@ import {
 
 const index = () => {
   return (
-    <section>
+    <section id="contact">
       <div className="m-4 flex flex-col flex-wrap">
         <div className="flex gap-4 w-full max-sm:flex-wrap">
           <div className="flex flex-col w-full gap-4">
@@ -20,7 +20,7 @@ const index = () => {
                 alt=""
               />
             </div>
-            <footer className="grow p-5 flex items-center justify-center flex-col bg-zinc-800 rounded-lg space-y-4">
+            <footer className="grow p-5 flex items-center justify-center flex-col bg-zinc-800 rounded-lg space-y-4 max-sm:h-[25vh]">
               <div className="text-lg flex items-center justify-center gap-8">
                 <a className="duration-300 hover:text-cyan-500" href="">
                   <FaInstagram />
@@ -36,20 +36,23 @@ const index = () => {
                 </a>
               </div>
               <div className="flex items-center justify-center gap-8">
-                <a className="duration-300 hover:text-cyan-500" href="">
+                <a className="duration-300 hover:text-cyan-500" href="#home">
                   Home
                 </a>
-                <a className="duration-300 hover:text-cyan-500" href="">
+                <a
+                  className="duration-300 hover:text-cyan-500"
+                  href="#portfolio"
+                >
                   Portfolio
                 </a>
-                <a className="duration-300 hover:text-cyan-500" href="">
+                <a className="duration-300 hover:text-cyan-500" href="#contact">
                   Contact
                 </a>
               </div>
               <p className="text-sm text-center">
                 &copy; Art. All right reserved. Site design by:{" "}
                 <a
-                  className="font-bold duration-300 hover:text-cyan-500"
+                  className="font-semibold duration-300 hover:text-cyan-500"
                   target="_blank"
                   href="https://muhammadfathurraiyan.site/"
                 >
@@ -59,10 +62,10 @@ const index = () => {
             </footer>
           </div>
           <form
-            className="bg-zinc-800 grow p-5 rounded-lg w-full flex justify-center flex-col gap-4 "
+            className="bg-zinc-800 grow p-5 rounded-lg w-full flex justify-center flex-col gap-4 max-sm:-order-1"
             action=""
           >
-            <div className="flex gap-4 w-full max-sm:flex-wrap">
+            <div className="flex gap-4 w-full max-sm:flex-wrap max-sm:mb-7">
               <div className="flex flex-col max-sm:grow gap-4">
                 <div className="">
                   <label for="name" className="block mb-2 text-sm">
@@ -99,7 +102,7 @@ const index = () => {
                 </div>
               </div>
               <div className="flex flex-col grow">
-                <div className="max-sm:h-3/4">
+                <div className="">
                   <label for="text-area" className="block mb-2 text-sm">
                     Your messages
                   </label>
@@ -112,7 +115,7 @@ const index = () => {
                 </div>
               </div>
             </div>
-            <div>
+            <div className="">
               <button
                 type="submit"
                 className="float-right bg-cyan-700 hover:bg-cyan-800 rounded-lg text-zinc-100 duration-300 text-sm px-5 py-2.5 text-center"
