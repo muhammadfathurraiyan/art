@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./pages/home";
 import Portfolio from "./pages/portfolio";
+import Contact from "./pages/contact"
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <main>
         <Home />
         <Portfolio />
+        <Contact />
       </main>
     </>
   );
