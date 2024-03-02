@@ -7,7 +7,7 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 
-const index = () => {
+const Contact = () => {
   return (
     <section id="contact">
       <div className="m-4 flex flex-col flex-wrap">
@@ -130,4 +130,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Contact;

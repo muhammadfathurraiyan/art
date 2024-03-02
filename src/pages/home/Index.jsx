@@ -30,7 +30,7 @@ const boxVariants = {
   },
 };
 
-const index = () => {
+const Home = () => {
   const [toggle, setToggle] = useState(false);
   const handleToggle = () => {
     setToggle(!toggle);
@@ -161,4 +161,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Home;

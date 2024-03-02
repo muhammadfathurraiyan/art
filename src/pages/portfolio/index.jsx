@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const index = () => {
+const Portfolio = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -41,4 +41,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Portfolio;
