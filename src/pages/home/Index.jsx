@@ -7,6 +7,7 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 import { AnimatePresence, motion } from "framer-motion";
+import Arief from "/arief.jpeg";
 
 const boxVariants = {
   initial: {
@@ -140,18 +141,18 @@ const index = () => {
             </div>
           </div>
           <div className="p-5 bg-zinc-800 rounded-lg grow flex flex-col justify-center">
-            <h1 className="text-5xl font-bold">Lorem ipsum dolor sit amet.</h1>
+            <h1 className="text-5xl font-bold">Teuku Arief Rahmansyah</h1>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Praesentium nulla, consectetur laboriosam delectus tempora
-              voluptatibus!
+              Hello everyone meet me Arief, welcome to my portfolio, i am a
+              artist, i love painting, i do a lot of paintings, this is my
+              passion this is my live.
             </p>
           </div>
         </div>
         <div className="flex grow ">
           <img
-            className="rounded-lg object-cover max-h-full min-w-full align-bottom"
-            src="https://picsum.photos/800"
+            className="rounded-lg w-[900px] object-cover max-h-full min-w-full align-bottom"
+            src={Arief}
             alt=""
           />
         </div>

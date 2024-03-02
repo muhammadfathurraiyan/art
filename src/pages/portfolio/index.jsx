@@ -19,14 +19,8 @@ const index = () => {
     <section id="portfolio">
       <div className="m-4 flex flex-col gap-4">
         <div className="flex flex-col items-center bg-zinc-800 rounded-lg grow justify-center p-5">
-          <h1 className="text-xl font-bold">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo,
-            nostrum.
-          </h1>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
-            maiores voluptas officiis vero numquam ea!
-          </p>
+          <h1 className="text-4xl font-bold">My Portfolio</h1>
+          <p>The collection of my works in the last 20 years.</p>
         </div>
         <div className="flex-wrap flex gap-4 max-sm:flex-row">
           {data.map((d) => (
