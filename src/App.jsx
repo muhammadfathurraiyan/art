@@ -1,7 +1,6 @@
-import React from "react";
-import Home from "./pages/home";
-import Portfolio from "./pages/portfolio";
-import Contact from "./pages/contact";
+import Contact from "./pages/contact/Contact";
+import Home from "./pages/home/Home";
+import Portfolio from "./pages/portfolio/Portfolio";
 
 const App = () => {
   return (
